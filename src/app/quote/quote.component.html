@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>My Quotes</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let quote of quotes, let i = index'>
+        <div>
+          <h4 id={{i}}>{{quote.names}}</h4>
+          <button (click)='toggleDetails(i)'>See Quotes</button>
+        </div>
+
+        <div *ngIf='quote.showQuoted'>
+          <app-quote-detail [quote]='quote' (isComplete) = 'completeQuote($event,i)'></app-quote-detail>
+          <app-quote-detail [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6" id="add">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+
+  </div>
+
+
+
+</div>

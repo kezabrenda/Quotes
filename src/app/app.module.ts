@@ -18,7 +18,6 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
     HighlightDirective,
     DateCountPipe,
     QuoteFormComponent,
-    FormsModule
   ],
   imports: [
     BrowserModule,
